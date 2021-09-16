@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my first calculator</title>
+</head>
+<style>
+    table{
+        border:1px dotted red;
+        border-collapse: collapse;
+        background-color: rgb(162, 234, 236);
+    }
+    tr,td{
+        border:1px solid green;
+    }
+    input[type="button"]{
+        background-color: bisque;
+        padding: 5px 10px;
+        font-size: 15px;
+        width:40px;
+    }
+    input[type="text"]{
+        height: 22px;
+        border:1px solid gray;
+    }
+</style>
+<body>
+    <div>
+        <table>
+            <tr colspan="3">
+                <td><input type="text" id="resultValue"></td>
+                <td><input type="button" onClick="clearValue()" value="cal"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" onClick="getcCurrentValue('1')" type="button" value="1"></td>
+                <td><input class="btn" onClick="getcCurrentValue('2')" type="button" value="2"></td>
+                <td><input class="btn" onClick="getcCurrentValue('3')" type="button" value="3"></td>
+                <td><input class="btn" onClick="getcCurrentValue('/')" type="button" value="/"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" onClick="getCurrentValue('4')" type="button" value="4"></td>
+                <td><input class="btn" onClick="getCurrentValue('5')" type="button" value="6"></td>
+                <td><input class="btn" onClick="getCurrentValue('6')" type="button" value="7"></td>
+                <td><input class="btn" onClick="getCurrentValue('-')" type="button" value="-"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" onClick="getCurrentValue('7')" type="button" value="7"></td>
+                <td><input class="btn" onClick="getCurrentValue('8')" type="button" value="8"></td>
+                <td><input class="btn" onClick="getCurrentValue('9')" type="button" value="9"></td>
+                <td><input class="btn" onClick="getCurrentValue('+')" type="button" value="+"></td>
+            </tr>
+            <tr>
+                <td><input class="btn" onClick="getCurrentValue('.')" type="button" value="."></td>
+                <td><input class="btn" onClick="getCurrentValue('0')" type="button" value="0"></td>
+                <td><input class="btn" onClick="equalToResult()" type="button" value="="></td>
+                <td><input class="btn" onClick="getCurrentValue('*')" type="button" value="*"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+function getCurrentValue(val){
+    var oldValue=document.getElementById("resultValue").value;
+    document.getElementById("resultValue").value +=val;
+}
+function clearValue(){
+    document.getElementById("resultValue").value =" ";
+}
+function equalToResult(){
+    var data=document.getElementById("resultValue").value;
+    document.getElementById("resultValue").value=eval(data);
+}
+</scriptC
+</html>
